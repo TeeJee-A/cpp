@@ -6,14 +6,14 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 19:16:41 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/20 19:43:58 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 21:44:16 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int main() {
-  ClapTrap claptrap("Robert");
+  ClapTrap claptrap("ayoub");
   claptrap.attack("Enemy");
   claptrap.takeDamage(5);
   claptrap.beRepaired(3);

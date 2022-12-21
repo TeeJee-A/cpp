@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:32:28 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 18:19:18 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 21:50:56 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,12 @@ ClapTrap::ClapTrap(const ClapTrap& ClapT){
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& ClapT){
-    std::cout << "copy assigment operator called" << std::endl;
-    this->AttackDamage = ClapT.AttackDamage;
-    this->EnergyPoints = ClapT.EnergyPoints;
-    this->HitPoints = ClapT.HitPoints;
+    std::cout << "ClapTrap copy assigment operator called" << std::endl;
+    if (this != &ClapT){
+        this->AttackDamage = ClapT.AttackDamage;
+        this->EnergyPoints = ClapT.EnergyPoints;
+        this->HitPoints = ClapT.HitPoints;
+    }
     return (*this);
 }
 

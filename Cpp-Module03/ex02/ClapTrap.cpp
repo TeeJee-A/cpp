@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:32:28 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 18:19:18 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 21:36:54 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@ ClapTrap::ClapTrap(std::string name){
     EnergyPoints = 10;
     AttackDamage = 0;
     Name = name;
-    std::cout << "ClapTrap constructor called" << std::endl;
+    std::cout << "ClapTrap(name) : ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(){
     HitPoints = 10;
     EnergyPoints = 10;
     AttackDamage = 0;
-    std::cout << "ClapTrap default constructor called" << std::endl;
+    std::cout << "ClapTrap() : ClapTrap default constructor called" << std::endl;
     Name = "no-Name";
 }
 
 void ClapTrap::attack(const std::string& target){
+    std::cout << "Attack : ";
     if (this->HitPoints <= 0){
         std::cout << "ClapTrap " << this->Name << " died" << std::endl;
         return ;
@@ -43,12 +44,14 @@ void ClapTrap::attack(const std::string& target){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
+    std::cout << "takeDamage : ";
     std::cout << "Attention ClapTrap " << this->Name << " take " << amount;
     std::cout << " from her " << this->HitPoints << " HitsPoints" << std::endl;
     this->HitPoints -= amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
+    std::cout << "beRepaired : ";
     if (this->HitPoints <= 0){
         std::cout << "ClapTrap " << this->Name << " died" << std::endl;
         return ;
@@ -64,18 +67,20 @@ void ClapTrap::beRepaired(unsigned int amount){
 }
 
 ClapTrap::ClapTrap(const ClapTrap& ClapT){
-    std::cout << "copy constructor called" << std::endl;
+    std::cout << "ClapTrap(ClapT) : ClapTrap copy constructor called" << std::endl;
     *this = ClapT;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& ClapT){
-    std::cout << "copy assigment operator called" << std::endl;
-    this->AttackDamage = ClapT.AttackDamage;
-    this->EnergyPoints = ClapT.EnergyPoints;
-    this->HitPoints = ClapT.HitPoints;
+    std::cout << "ClapTrap copy assigment operator called" << std::endl;
+    if (this != &ClapT){
+        this->AttackDamage = ClapT.AttackDamage;
+        this->EnergyPoints = ClapT.EnergyPoints;
+        this->HitPoints = ClapT.HitPoints;
+    }
     return (*this);
 }
 
 ClapTrap::~ClapTrap(){
-    std::cout << "ClapTrap destructor called" << std::endl;
+    std::cout << "~ClapTrap : ClapTrap destructor called" << std::endl;
 }

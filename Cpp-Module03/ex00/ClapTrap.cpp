@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:51:22 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/20 19:43:08 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 21:43:58 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ ClapTrap::ClapTrap(){
     AttackDamage = 0;
     std::cout << "ClapTrap didn't have a name" << std::endl;
     Name = "no-Name";
+}
+
+ClapTrap::ClapTrap(const ClapTrap& ClapT){
+    std::cout << "ClapTrap copy constructor called" << std::endl;
+    *this = ClapT;
 }
 
 void ClapTrap::attack(const std::string& target){
@@ -63,6 +68,16 @@ void ClapTrap::beRepaired(unsigned int amount){
     std::cout << " hit points back to " << this->HitPoints << " HitsPoints" << std::endl;
     this->EnergyPoints--;
     this->HitPoints += amount;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& ClapT){
+    std::cout << "ClapTrap copy assigment operator called" << std::endl;
+    if (this != &ClapT){
+        this->AttackDamage = ClapT.AttackDamage;
+        this->EnergyPoints = ClapT.EnergyPoints;
+        this->HitPoints = ClapT.HitPoints;
+    }
+    return (*this);
 }
 
 ClapTrap::~ClapTrap(){

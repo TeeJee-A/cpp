@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 13:49:30 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/20 19:27:08 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 21:41:37 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ private:
 public:
     ClapTrap(std::string name);
     ClapTrap();
+    ClapTrap(const ClapTrap& ClapT);
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    ClapTrap& operator=(const ClapTrap& ClapT);
     ~ClapTrap();
 };
 

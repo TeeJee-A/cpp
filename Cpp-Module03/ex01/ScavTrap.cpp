@@ -6,22 +6,25 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 14:18:42 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 18:17:32 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 21:51:14 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap& ScavTrap::operator= (const ScavTrap& ScavT){
-    std::cout << "ScavTrap copy assigment called" << std::endl;
-    // ScavTrap::operator=(ScavT);
-    (void)ScavT;
+    std::cout << "ScavTrap copy assigment operator called" << std::endl;
+    if (this != &ScavT)
+        ClapTrap::operator=(ScavT);
     return (*this);
 }
 
 ScavTrap::ScavTrap(){
     std::cout << "ScavTrap default constructor called" << std::endl;
     Name = "no-Name";
+    HitPoints = 100;
+    EnergyPoints = 50;
+    AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
@@ -36,7 +39,7 @@ void ScavTrap::guardGate(){
     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& ScavT){
+ScavTrap::ScavTrap(const ScavTrap& ScavT) : ClapTrap(ScavT){
     std::cout << "ScavTrap copy constructor called" << std::endl;
     *this = ScavT;
 }

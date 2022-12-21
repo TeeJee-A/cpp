@@ -6,16 +6,22 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:22:00 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 18:21:19 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 22:06:09 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 int main(){
-    ScavTrap scavtrap("Hodor");
-    scavtrap.attack("nightking");
-    scavtrap.guardGate();
-    scavtrap.takeDamage(6);
-    scavtrap.beRepaired(6);
+    // ScavTrap scavtrap("Hodor");
+    // ScavTrap a;
+    // ScavTrap b(scavtrap);
+    // a = scavtrap;
+    // scavtrap.attack("nightking");
+    // scavtrap.guardGate();
+    // scavtrap.takeDamage(6);
+    // scavtrap.beRepaired(6);
+    ClapTrap *c = new ScavTrap("ayoub");
+    c->attack("said");
+    delete c;
 }
