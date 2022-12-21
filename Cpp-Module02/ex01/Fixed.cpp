@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:48:38 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/19 22:52:52 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/20 11:32:07 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ std::ostream& operator<<(std::ostream &out, const Fixed& fixed)
 
 int Fixed::toInt(void) const{
     int NewInt;
-    NewInt = (float)(fixed / (float)(1 << fractional));
+    NewInt = (fixed / (1 << fractional));
     return (NewInt);
 }
 

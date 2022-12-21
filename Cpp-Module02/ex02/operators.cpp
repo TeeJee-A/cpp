@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 15:53:53 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/20 10:06:13 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/20 11:20:53 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ Fixed Fixed::operator-- (int){
     return (Fix);
 }
 
-Fixed& Fixed::operator+(const Fixed& Fix){
-    *this = this->fixed + Fix.fixed;
+Fixed Fixed::operator+(const Fixed& Fix){
+    *this = this->toFloat() + Fix.toFloat();
     return (*this);
 }
 
-Fixed& Fixed::operator-(const Fixed& Fix){
-    *this = this->fixed - Fix.fixed;
+Fixed Fixed::operator-(const Fixed& Fix){
+    *this = this->toFloat() - Fix.toFloat();
     return (*this);
 }
 
@@ -64,11 +64,6 @@ Fixed Fixed::operator*(const Fixed& Fix){
 }
 
 Fixed Fixed::operator/ (const Fixed& Fix){
-    if (this->toFloat() == 0)
-    {
-        *this = 0;
-        return (*this);
-    }
     *this = this->toFloat() / Fix.toFloat();
     return(*this);
 }

@@ -5,22 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 16:21:51 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/20 10:13:21 by ataji            ###   ########.fr       */
+/*   Created: 2022/12/21 15:22:00 by ataji             #+#    #+#             */
+/*   Updated: 2022/12/21 18:21:19 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
 
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
+int main(){
+    ScavTrap scavtrap("Hodor");
+    scavtrap.attack("nightking");
+    scavtrap.guardGate();
+    scavtrap.takeDamage(6);
+    scavtrap.beRepaired(6);
 }

@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 16:21:51 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/20 10:13:21 by ataji            ###   ########.fr       */
+/*   Created: 2022/12/21 18:31:17 by ataji             #+#    #+#             */
+/*   Updated: 2022/12/21 18:35:48 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "FragTrap.hpp"
 
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
+FragTrap::FragTrap(std::string name) : ClapTrap(name){
+    std::cout << "FragTrap constructor called" << std::endl;
+    Name = name;
+    HitPoints = 100;
+    EnergyPoints = 100;
+    AttackDamage = 30;
+}
+
+FragTrap::~FragTrap(){
+    std::cout << "FragTrap destructor called" << std::endl;
 }

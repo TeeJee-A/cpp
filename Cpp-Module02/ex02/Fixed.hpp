@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:46:45 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/19 23:04:45 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/20 11:20:37 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ public:
     Fixed operator ++(int);
     Fixed operator --(int);
     Fixed operator --();
-    Fixed& operator+ (const Fixed& Fix);
-    Fixed& operator- (const Fixed& Fix);
+    Fixed operator+ (const Fixed& Fix);
+    Fixed operator- (const Fixed& Fix);
     Fixed operator * (const Fixed& Fix);
     Fixed operator / (const Fixed& Fix);
     static Fixed& min(Fixed& Fix1, Fixed& Fix2);

@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 16:21:51 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/20 10:13:21 by ataji            ###   ########.fr       */
+/*   Created: 2022/12/21 18:26:59 by ataji             #+#    #+#             */
+/*   Updated: 2022/12/21 18:35:10 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef FRAGTRAP_H
+#define FRAGTRAP_H
 
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
-}
+#include <iostream>
+#include "ClapTrap.hpp"
+
+class FragTrap: public ClapTrap{
+public:
+    FragTrap(std::string name);
+    ~FragTrap();
+};
+
+#endif
