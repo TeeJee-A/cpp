@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:51:22 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 21:43:58 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 23:34:28 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ ClapTrap::ClapTrap(std::string name){
     HitPoints = 10;
     EnergyPoints = 10;
     AttackDamage = 0;
-    if (name.empty())
-        Name = "no-Name";
     Name = name;
     std::cout << "setting a " << this->Name << " to ClapTrap name" << std::endl;
 }
@@ -36,11 +34,11 @@ ClapTrap::ClapTrap(const ClapTrap& ClapT){
 }
 
 void ClapTrap::attack(const std::string& target){
-    if (this->HitPoints <= 0){
+    if (this->HitPoints == 0){
         std::cout << "ClapTrap " << this->Name << " died" << std::endl;
         return ;
     }
-    if (this->EnergyPoints <= 0){
+    if (this->EnergyPoints == 0){
         std::cout << "ClapTrap " << this->Name << " didn't have energy" << std::endl;
         return ;
     }
@@ -56,11 +54,11 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-    if (this->HitPoints <= 0){
+    if (this->HitPoints == 0){
         std::cout << "ClapTrap " << this->Name << " died" << std::endl;
         return ;
     }
-    if (this->EnergyPoints <= 0){
+    if (this->EnergyPoints == 0){
         std::cout << "ClapTrap " << this->Name << " didn't have energy" << std::endl;
         return ;
     }

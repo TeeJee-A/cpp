@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:32:28 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 21:50:56 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 23:34:46 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ ClapTrap::ClapTrap(){
 }
 
 void ClapTrap::attack(const std::string& target){
-    if (this->HitPoints <= 0){
+    if (this->HitPoints == 0){
         std::cout << "ClapTrap " << this->Name << " died" << std::endl;
         return ;
     }
-    if (this->EnergyPoints <= 0){
+    if (this->EnergyPoints == 0){
         std::cout << "ClapTrap " << this->Name << " didn't have energy" << std::endl;
         return ;
     }
@@ -49,11 +49,11 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-    if (this->HitPoints <= 0){
+    if (this->HitPoints == 0){
         std::cout << "ClapTrap " << this->Name << " died" << std::endl;
         return ;
     }
-    if (this->EnergyPoints <= 0){
+    if (this->EnergyPoints == 0){
         std::cout << "ClapTrap " << this->Name << " didn't have energy" << std::endl;
         return ;
     }

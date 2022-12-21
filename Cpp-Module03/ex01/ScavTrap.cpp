@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 14:18:42 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 21:51:14 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/21 23:34:59 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ ScavTrap::ScavTrap(const ScavTrap& ScavT) : ClapTrap(ScavT){
 }
 
 void ScavTrap::attack(const std::string& target){
-    if (HitPoints <= 0){
+    if (HitPoints == 0){
         std::cout << "ScavTrap " << this->Name << " died" << std::endl;
         return ;
     }
