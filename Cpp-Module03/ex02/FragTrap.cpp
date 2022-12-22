@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:31:17 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 21:34:49 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/22 09:13:38 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
 
 FragTrap::FragTrap(){
     std::cout << "FragTrap() : FragTrap Default constructor called" << std::endl;
+    Name = "no-Name";
     HitPoints = 100;
     EnergyPoints = 100;
     AttackDamage = 30;

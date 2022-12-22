@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:51:22 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/21 23:34:28 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/22 09:09:43 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void ClapTrap::beRepaired(unsigned int amount){
 ClapTrap& ClapTrap::operator=(const ClapTrap& ClapT){
     std::cout << "ClapTrap copy assigment operator called" << std::endl;
     if (this != &ClapT){
+        this->Name = ClapT.Name;
         this->AttackDamage = ClapT.AttackDamage;
         this->EnergyPoints = ClapT.EnergyPoints;
         this->HitPoints = ClapT.HitPoints;
