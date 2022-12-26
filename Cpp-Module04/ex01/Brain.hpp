@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 15:22:00 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/26 12:59:10 by ataji            ###   ########.fr       */
+/*   Created: 2022/12/22 18:18:45 by ataji             #+#    #+#             */
+/*   Updated: 2022/12/24 14:16:58 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef BRAIN_H
+#define BRAIN_H
 
-int main(){
-    // ScavTrap scavtrap("Hodor");
-    // ScavTrap a;
-    // ScavTrap b(scavtrap);
-    // a = scavtrap;
-    // scavtrap.attack("nightking");
-    // scavtrap.guardGate();
-    // scavtrap.takeDamage(6);
-    // scavtrap.beRepaired(6);
-    ClapTrap *c = new ScavTrap("ayoub");
-    c->attack("said");
-    delete c;
-}
+#include "Animal.hpp"
+
+class Brain{
+private:
+    std::string ideas[100];
+public:
+    Brain();
+    Brain(const Brain& b);
+    Brain& operator=(const Brain& b);
+    void setIdeas(int i, std::string ideas);
+    ~Brain();
+};
+
+#endif
