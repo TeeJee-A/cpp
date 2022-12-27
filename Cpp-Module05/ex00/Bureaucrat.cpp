@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 14:26:37 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/25 10:42:47 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/27 00:35:03 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : Name(name), Grade(grade){
         throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& B){
+Bureaucrat::Bureaucrat(const Bureaucrat& B) : Name(B.Name), Grade(B.Grade){
     std::cout << "copy constructor called" << std::endl;
     *this = B;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& B){
-    std::cout << "copy assigment operator called" << std::endl;
-    if (this != &B){
-        Grade = B.Grade;
-    }
+    (void)B;
     return (*this);
 }
 
@@ -55,6 +52,9 @@ void Bureaucrat::increment(){
         throw GradeTooHighException();
     }
     this->Grade--;
+    if (this->Grade < 1){
+        throw GradeTooHighException();
+    }
 }
 
 void Bureaucrat::decrement(){
@@ -62,6 +62,9 @@ void Bureaucrat::decrement(){
         throw GradeTooLowException();
     }
     this->Grade++;
+    if (this->Grade > 150){
+        throw GradeTooLowException();
+    }
 }
 
 Bureaucrat::~Bureaucrat(){

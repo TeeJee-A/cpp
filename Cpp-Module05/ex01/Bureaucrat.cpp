@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 14:26:37 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/25 21:36:19 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/27 00:25:45 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& B){
 }
 
 void Bureaucrat::signForm(Form& form){
-    if (form.getSigned() == true){
-        std::cout << getName() << " signed " << form.getName() << std::endl;
-    } else {
-        std::cout << getName() << " couldn't sign " << getName() << " because the grade of the bureaucrat is lower than can sign the form" << std::endl;
+    try{
+        form.beSigned(*this);
+        if (form.getSigned() == true)
+            std::cout << getName() << " signed " << form.getName() << std::endl;
+    }catch (std::exception& e) {
+        std::cout << getName() << " couldn't sign " << getName() << " because : " << e.what() << std::endl;
     }
 }
 
@@ -59,6 +61,9 @@ void Bureaucrat::increment(){
         throw GradeTooHighException();
     }
     this->Grade--;
+    if (this->Grade < 1){
+        throw GradeTooHighException();
+    }
 }
 
 void Bureaucrat::decrement(){
@@ -66,6 +71,9 @@ void Bureaucrat::decrement(){
         throw GradeTooLowException();
     }
     this->Grade++;
+    if (this->Grade > 150){
+        throw GradeTooLowException();
+    }
 }
 
 Bureaucrat::~Bureaucrat(){

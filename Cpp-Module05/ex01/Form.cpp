@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:44:48 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/25 21:35:36 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/27 00:38:39 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ Form::Form() : Name("ayoub"), SignGrade(24), ExecGrade(25){
 
 Form::Form(std::string name, int signgrade, int execgrade): Name(name), SignGrade(signgrade), ExecGrade(execgrade) {
     std::cout << "Form parametrized constructor called" << std::endl;
+    if (this->SignGrade < 1 || this->ExecGrade < 1)
+        throw GradeTooHighException();
+    if (this->ExecGrade > 150 || this->SignGrade > 150)
+        throw GradeTooLowException();
 }
 
 Form::Form(const Form& form) : Name(form.Name), SignGrade(form.SignGrade), ExecGrade(form.ExecGrade){
@@ -46,7 +50,6 @@ int Form::getExecGrade(){
 }
 
 void Form::beSigned(Bureaucrat Bur){
-    std::cout << "beSined called" << std::endl;
     if (Bur.getGrade() < 1)
         throw GradeTooHighException();
     if (Bur.getGrade() > 150)
@@ -56,6 +59,8 @@ void Form::beSigned(Bureaucrat Bur){
     } else {
         this->Signed = false;
     }
+    if (getSigned() == false)
+        throw NotSigned();
 }
 
 std::ostream& operator<<(std::ostream& out, Form& form){

@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 16:52:49 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/25 21:36:54 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/27 00:31:41 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 // {
 //     try
 //     {
-//         Bureaucrat b("Soap", 3);
+//         Bureaucrat b("Soap", 150);
 //         std::cout << b << std::endl;
 
 //         b.increment();
@@ -50,12 +50,10 @@
 
 int main(){
     try{
-        Bureaucrat Bur("ayoub", 24);
-        Form form("taji", 23, 26);
-        form.beSigned(Bur);
-        Bur.signForm(form);
-        std::cout << form << std::endl;
-    } catch (std::exception& e){
-        std::cout << "Error : " << e.what() << std::endl;
+        Form a;
+        Form b("said",405,45);
+    }catch (std::exception& e){
+        std::cout << e.what() << std::endl;
     }
+    return 0;
 }
