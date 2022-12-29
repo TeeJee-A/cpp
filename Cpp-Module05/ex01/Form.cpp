@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:44:48 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/27 00:38:39 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/27 14:01:11 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void Form::beSigned(Bureaucrat Bur){
 }
 
 std::ostream& operator<<(std::ostream& out, Form& form){
-    out << "The Name of Bureaucrat : " << form.getName() << "\n";
-    out << "The SignGrade of Bureaucrat : " << form.getSignGrade() << "\n";
-    out << "The ExecGrade of Bureaucrat : " << form.getExecGrade() << "\n";
-    out << "The indicat which show if signed or not : " << form.getSigned();
+    out << "√ The Name of Bureaucrat : " << form.getName() << "\n";
+    out << "√ The SignGrade of Bureaucrat : " << form.getSignGrade() << "\n";
+    out << "√ The ExecGrade of Bureaucrat : " << form.getExecGrade() << "\n";
+    out << "√ The indicat which show if signed or not : " << form.getSigned();
     return (out);
 }
 
