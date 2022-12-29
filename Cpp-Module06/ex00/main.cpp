@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 18:56:46 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/28 16:56:47 by ataji            ###   ########.fr       */
+/*   Updated: 2022/12/29 14:20:09 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ void conversion::charCondition(std::string arg)
         std::cout << "char: '" << static_cast<char>(Input) << "'" << std::endl;
     }else if (arg.length() == 1){
         char c = arg[0];
-        std::cout << "here" << std::endl;
         std::cout << "char: '" << c << "'" << std::endl;
     }else{
         throw nonDisplayable();
