@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 15:43:40 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/31 00:44:07 by ataji            ###   ########.fr       */
+/*   Created: 2022/12/31 13:53:38 by ataji             #+#    #+#             */
+/*   Updated: 2022/12/31 14:40:44 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_H
-#define ITER_H
+#include "easyfind.hpp"
 
-#include <iostream>
-
-template <typename T> void print(T param){
-    std::cout << param << std::endl;
+int main(){
+    static const int arr[] = {4, 1, 6, 7, 3, 5};
+    std::vector<int> vec(arr, arr + sizeof(arr) / sizeof(arr[0]));
+    easyfind(vec, 3);
+    return 0;
 }
-
-
-template <typename T, typename IFT> void iter(T *Array, int lengthArray, IFT func){
-    for(int i = 0; i < lengthArray; i++)
-        func(Array[i]);
-}
-
-#endif

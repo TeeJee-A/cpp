@@ -5,18 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 15:44:12 by ataji             #+#    #+#             */
-/*   Updated: 2022/12/31 13:03:08 by ataji            ###   ########.fr       */
+/*   Created: 2023/01/01 12:18:44 by ataji             #+#    #+#             */
+/*   Updated: 2023/01/02 11:27:22 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Span.hpp"
 
 int main()
 {
-    int tab[] = {0, 1, 2, 3, 4 };
-    char tab2[] = "ayoub";
-    iter(tab, 5, print<int>);
-    iter(tab2, 5, print<char>);
+    Span sp = Span(1000);
+    try{
+        sp.addNumberManytimes(1000);
+        std::cout << sp.shortestSpan() << " : shortestSpan"  << std::endl;
+        std::cout << sp.longestSpan() << " : longestSpan" << std::endl;
+        sp.printArray();
+        // while (1);
+    } catch (std::exception& e){
+        std::cout << " Warning : " << e.what() << std::endl;
+    }
     return 0;
 }
