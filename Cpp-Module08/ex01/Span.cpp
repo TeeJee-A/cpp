@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 14:09:54 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/02 11:28:10 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/03 09:48:49 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int Span::shortestSpan(){
             min = Result[j];
         }
     }
-    delete[] Result;
     finalResult = min;
     return finalResult;
 }
