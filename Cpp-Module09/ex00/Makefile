@@ -9,7 +9,7 @@ all:$(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $^
 
-%.o:%.cpp
+%.o:%.cpp BitcoinExchange.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

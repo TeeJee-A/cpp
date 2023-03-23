@@ -6,6 +6,7 @@ int main(int ac, char **av) {
         file = av[1];
         BitcoinExchange Bit(file, "data.csv");
         Bit.fill_data_base();
+        Bit.fill_data_input();
     } else {
         std::cout << "Error: could not open file" << std::endl;
     }
