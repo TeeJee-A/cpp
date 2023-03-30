@@ -38,7 +38,7 @@ void execute(char *operations) {
         else if (operations[0] == '/')
             result = two / one;
         stack.push(result);
-    } else {
+    } else if (!is_operator(operations)){
         stack.push(oper);
     }
 }
@@ -54,5 +54,6 @@ void begin(char *operations) {
         execute(token);
         token = strtok(NULL, " ");
     }
-    std::cout << stack.top() << std::endl;
+    if (stack.size() == 1)
+        std::cout << stack.top() << std::endl;
 }
