@@ -32,7 +32,7 @@ void execute(char operations) {
             result = two * one;
         else if (operations == '/') {
             if (one == 0) {
-                std::cout << "Error" << std::endl;
+                std::cout << "Error1" << std::endl;
                 exit(1);
             }
             result = two / one;
@@ -41,7 +41,7 @@ void execute(char operations) {
     } else if (!is_operator(operations)) {
         stack.push(oper);
     } else if (stack.size() == 1 && is_operator(operations)) {
-        std::cout << "Error" << std::endl;
+        std::cout << "Error2" << std::endl;
         exit(1);
     }
 }
@@ -51,7 +51,7 @@ void begin(char* operations) {
     while (operations && operations[i]) {
         if (operations[i] != ' ') {
             if (!parse_operations(operations[i])) {
-                std::cout << "Error" << std::endl;
+                std::cout << "Error3" << std::endl;
                 exit(1);
             }
             execute(operations[i]);
@@ -61,7 +61,7 @@ void begin(char* operations) {
     if (stack.size() == 1)
         std::cout << stack.top() << std::endl;
     else {
-        std::cout << "Error" << std::endl;
+        std::cout << "Error4" << std::endl;
         exit(1);
     }
 }

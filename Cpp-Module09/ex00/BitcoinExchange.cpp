@@ -63,7 +63,7 @@ std::string    parse_value(std::string value, std::string date) {
         std::cout << "Error: not a positive number." << std::endl;
         return "";
     }
-    if (atof(value.c_str()) > INT_MAX) {
+    if (atof(value.c_str()) > 1000) {
         std::cout << "Error: too large a number." << std::endl;
         return "";
     }
@@ -194,7 +194,6 @@ int	count_words(std::string str, char delim)
 }
 
 std::string *split(std::string data, std::string delim) {
-    // std::string del(delim);
     const char *del = delim.c_str();
     std::string *splited = new std::string[count_words(data, *del) + 1];
     int i = 0;
@@ -248,7 +247,7 @@ void    fill_input_database(std::string name_of_file) {
                 continue ;
             k++;
             helper = split(data_base, ",");
-            if (count_words(data_base, *del1) != 2) {
+            if (count_words(data_base, *del1) != 2 || helper->size() == 1) {
                 std::cout << "Error: database failed" << std::endl;
                 exit (1);
             }
@@ -268,7 +267,7 @@ void    fill_input_database(std::string name_of_file) {
                 continue ;
             flag++;
             helper = split(data_input, del2);
-            if (count_words(data_input, *del2) != 2) {
+            if (count_words(data_input, *del2) != 2 || helper->size() == 1) {
                 std::cout << "Error: bad input => " << data_input << std::endl;
                 delete[] helper;
                 continue ;
