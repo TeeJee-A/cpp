@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <cctype>
-#include <bits/stdc++.h>
 #include <sstream>
 #include <fstream>
 #include "Contact.hpp"
